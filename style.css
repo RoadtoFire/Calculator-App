@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: transparent;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.navbar p {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.navbar p:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+    color: white;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.display {
+    width: 100%;
+    max-width: 350px;
+    height: 80px;
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0 25px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #fff;
+    box-shadow: 
+        inset 0 2px 10px rgba(0, 0, 0, 0.3),
+        0 5px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calculator-face {
+    background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.row1, .row2, .row3, .row4 {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.row4 {
+    margin-bottom: 0;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.4em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: linear-gradient(145deg, #4a4a4a, #2d2d2d);
+    color: white;
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: linear-gradient(145deg, #5a5a5a, #3d3d3d);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Special styling for operators */
+button:nth-child(4) {
+    background: linear-gradient(145deg, #ff6b6b, #ee5a52);
+    color: white;
+}
+
+button:nth-child(4):hover {
+    background: linear-gradient(145deg, #ff7979, #fd6c6c);
+    transform: translateY(-3px);
+}
+
+/* Special styling for equals button */
+.row4 button:nth-child(4) {
+    background: linear-gradient(145deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.row4 button:nth-child(4):hover {
+    background: linear-gradient(145deg, #5fddd4, #4fb3a0);
+    transform: translateY(-3px);
+}
+
+/* Special styling for clear button */
+.row1 button:nth-child(4) {
+    background: linear-gradient(145deg, #ffa726, #ff9800);
+    color: white;
+}
+
+.row1 button:nth-child(4):hover {
+    background: linear-gradient(145deg, #ffb74d, #ffa726);
+    transform: translateY(-3px);
+}
+
+/* Number buttons styling */
+button:nth-child(1), button:nth-child(2), button:nth-child(3) {
+    background: linear-gradient(145deg, #6c5ce7, #5f3dc4);
+    color: white;
+}
+
+button:nth-child(1):hover, button:nth-child(2):hover, button:nth-child(3):hover {
+    background: linear-gradient(145deg, #7d6ce8, #6f4dc5);
+}
+
+.row4 button:nth-child(1) {
+    background: linear-gradient(145deg, #6c5ce7, #5f3dc4);
+}
+
+.row4 button:nth-child(1):hover {
+    background: linear-gradient(145deg, #7d6ce8, #6f4dc5);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    
+    .display {
+        max-width: 300px;
+        height: 70px;
+        font-size: 2em;
+        padding: 0 20px;
+    }
+    
+    .calculator-face {
+        padding: 20px;
+    }
+    
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2em;
+    }
+    
+    .row1, .row2, .row3, .row4 {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Add subtle animation to the whole calculator */
+.calculator-face {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add glow effect to display when active */
+.display:focus-within {
+    box-shadow: 
+        inset 0 2px 10px rgba(0, 0, 0, 0.3),
+        0 5px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(108, 92, 231, 0.3);
+}
+
+/* Smooth text changes in display */
+.display {
+    transition: all 0.2s ease;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
